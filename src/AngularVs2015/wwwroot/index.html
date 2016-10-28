@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="lib/common/shim.min.js"></script>
+    <script src="lib/common/zone.js"></script>
+    <script src="lib/common/Reflect.js"></script>
+    <script src="lib/common/system.src.js"></script>
+    <script>
+        System.config({
+            map: {
+                '@angular': 'lib/angular',
+                'rxjs': 'lib/rxjs'
+            },
+            packages: {
+                'lib/angular':
+                    {
+                        defaultExtension: 'umd.js'
+                    },
+                'lib/rxjs':
+                    {
+                        format: 'cjs',
+                        defaultExtension: 'js'
+                    },
+                'app':
+                    {
+                        format: 'cjs',
+                        defaultExtension: 'js'
+                    }
+            }
+        });
+
+        System.import('app/main').then(null, console.error.bind(console));
+    </script>
+    <title>Ground Zero for Angular2</title>
+</head>
+<body>
+    <my-app>Loading...</my-app>
+</body>
+</html>
